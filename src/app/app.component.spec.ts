@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'bf-hash-ang'`, () => {
+  it(`should have as title 'Brute-forcing hashcodes`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('bf-hash-ang');
+    expect(app.title).toEqual('Brute-forcing hashcodes');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('bf-hash-ang app is running!');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Brute-forcing hashcodes');
   });
 });
