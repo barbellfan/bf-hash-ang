@@ -1,44 +1,49 @@
 <h1>
   <span>{{ title }}</span>
 </h1>
+<form method="post" id="frmBf">
+
 <div>
   <label for="fldHashcode">Enter hashcode to be brute-forced:</label>
   <div>
-    <input id="fldHashcode" type="text" maxlength="120" />
+    <input id="fldHashcode" form="frmBf" type="text" maxlength="100" size="100" />
   </div>
 </div>
 <div>
   <label >Enter max length of plaintext:</label>
   <div>
-    <input id="fldMaxLen" type="text" maxlength="10" />
+    <input id="fldMaxLen" form="frmBf" type="text" maxlength="10" size="10"/>
   </div>
+</div>
 <div>
   <span>Include these characters in search (pick at least one):</span>
   <div>
-    <input type="checkbox" id="chkDigits" />
+    <input type="checkbox" id="chkDigits" form="frmBf" />
     <label for="chkDigits">Digits: <code>0123456789</code></label>
   </div>
   <div>
-    <input type="checkbox" id="chkLower" />
+    <input type="checkbox" id="chkLower" form="frmBf" />
     <label for="chkLower">Lower case: <code>abcdefghijklmnopqrstuvwxyz</code></label>
   </div>
   <div>
-    <input type="checkbox" id="chkUpper" />
+    <input type="checkbox" id="chkUpper" form="frmBf" />
     <label for="chkUpper">Upper case: <code>ABCDEFGHIJKLMNOPQRSTUVWXYZ</code></label>
   </div>
   <div>
-    <input type="checkbox" id="chkPunc" />
+    <input type="checkbox" id="chkPunc" form="frmBf" />
     <label for="chkPunc">Punctuation: <code>!"#$%&'()*+,-./:;&lt;=>?@[\]^_`|~{{'{}'}}</code></label>
   </div>
   <div>
-    <input type="checkbox" id="chkWhtSpc" />
+    <input type="checkbox" id="chkWhtSpc" form="frmBf" />
     <label for="chkWhtSpc">White space: space, tab, linefeed, return, formfeed, and vertical tab</label>
   </div>
 </div>
+</form>
 <div>
   <button>Brute Force</button>
   <button>Cancel</button>
 </div>
+
 <div>
   <label for="numOfCombos">Number of combinations to check:</label>
   <div>
@@ -48,13 +53,13 @@
 <div>
   <label for="progress">Progress:</label>
   <div>
-    <textarea id="progress" rows="1" cols="50"></textarea>
+    <textarea id="progress" rows="1" cols="50" readonly></textarea>
   </div>
 </div>
 <br />
 <div>
   <label for="result">Result</label>
   <div>
-    <textarea id="result" rows="1" cols="80"></textarea>
+    <textarea id="result" rows="1" cols="80" readonly></textarea>
   </div>
 </div>
