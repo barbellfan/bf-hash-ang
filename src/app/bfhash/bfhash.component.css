@@ -1,0 +1,37 @@
+.bfhash {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+
+input.text {
+  display: block;
+  width: 100%;
+  padding: .5rem;
+  margin: 1rem 0;
+  box-sizing: border-box;
+}
+
+
+button.bf-start-button {
+ padding: 1px 10px 3px 10px;
+ font-size: 1rem;
+ margin-bottom: 5px;
+}
+
+.bf-start-button:hover {
+  color: white;
+  background-color: #42545C;
+}
+
+button.cancel-button {
+  font-size: 1rem;
+  margin: 5px;
+  padding: 1px 10px 3px 10px;
+}
+
+button.cancel-button:hover {
+  background-color: #525252;
+  color: white;
+}

@@ -3,13 +3,13 @@
   <div>
     <label for="fldHashcode">Enter hashcode to be brute-forced:</label>
     <div>
-      <input id="fldHashcode" form="frmBf" type="text" maxlength="100" size="100" />
+      <input id="fldHashcode" form="frmBf" type="text" maxlength="100" size="100" name="nmFldHashcode" [(ngModel)]="bfRequest.hashcode"/>
     </div>
   </div>
   <div>
-    <label >Enter max length of plaintext:</label>
+    <label for="fldMaxLen">Enter max length of plaintext:</label>
     <div>
-      <input id="fldMaxLen" form="frmBf" type="text" maxlength="10" size="10"/>
+      <input id="fldMaxLen" form="frmBf" type="text" maxlength="10" size="10" name="nmFldMaxLen" [(ngModel)]="bfRequest.maxLen"/>
     </div>
   </div>
   <div>
@@ -37,8 +37,8 @@
   </div>
   </form>
   <div>
-    <button>Brute Force</button>
-    <button>Cancel</button>
+    <button type="button" class="bf-start-button" (click)="bfStart(bfRequest.hashcode, bfRequest.maxLen)">Brute Force</button>
+    <button type="button" class="cancel-button">Cancel</button>
   </div>
 
   <div>

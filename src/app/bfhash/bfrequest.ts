@@ -1,5 +1,5 @@
 export interface BFRequest {
-  hashcode: String;
+  hashcode: string;
   maxLen: number;
   includeDigits: boolean;
   includeLowerCase: boolean;
