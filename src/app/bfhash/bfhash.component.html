@@ -3,13 +3,13 @@
   <div>
     <label for="fldHashcode">Enter hashcode to be brute-forced:</label>
     <div>
-      <input id="fldHashcode" form="frmBf" type="text" maxlength="100" size="100" name="nmFldHashcode" [(ngModel)]="bfRequest.hashcode"/>
+      <input class="bftext" id="fldHashcode" form="frmBf" type="text" maxlength="100" size="100" name="nmFldHashcode" [(ngModel)]="bfRequest.hashcode"/>
     </div>
   </div>
   <div>
     <label for="fldMaxLen">Enter max length of plaintext:</label>
     <div>
-      <input id="fldMaxLen" form="frmBf" type="text" maxlength="10" size="10" name="nmFldMaxLen" [(ngModel)]="bfRequest.maxLen"/>
+      <input class="bftext" id="fldMaxLen" form="frmBf" type="text" maxlength="10" size="10" name="nmFldMaxLen" [(ngModel)]="bfRequest.maxLen"/>
     </div>
   </div>
   <div>
@@ -35,28 +35,34 @@
       <label for="chkWhtSpc">White space: space, tab, linefeed, return, formfeed, and vertical tab</label>
     </div>
   </div>
-  </form>
-  <div>
-    <button type="button" class="bf-start-button" (click)="bfStart()">Brute Force</button>
-    <button type="button" class="cancel-button">Cancel</button>
-  </div>
+</form>
+<div>
+  <button type="button" class="bf-start-button" (click)="bfStart()">Brute Force</button>
+  <button type="button" class="cancel-button">Cancel</button>
+</div>
+<br />
 
+<div class="title_box" id="results">
+  <div id="title">Results</div>
   <div>
-    <label for="numOfCombos">Number of combinations to check:</label>
     <div>
-      <textarea id="numOfCombos" rows="1" cols="50" readonly></textarea>
+      <label for="numOfCombos">Number of combinations to check:</label>
+      <div>
+        <textarea id="numOfCombos" rows="1" cols="50" readonly></textarea>
+      </div>
+    </div>
+    <div>
+      <label for="progress">Progress:</label>
+      <div>
+        <textarea id="progress" rows="1" cols="50" readonly></textarea>
+      </div>
+    </div>
+    <br />
+    <div>
+      <label for="result">Result</label>
+      <div>
+        <textarea id="result" rows="1" cols="80" readonly></textarea>
+      </div>
     </div>
   </div>
-  <div>
-    <label for="progress">Progress:</label>
-    <div>
-      <textarea id="progress" rows="1" cols="50" readonly></textarea>
-    </div>
-  </div>
-  <br />
-  <div>
-    <label for="result">Result</label>
-    <div>
-      <textarea id="result" rows="1" cols="80" readonly></textarea>
-    </div>
-  </div>
+</div>

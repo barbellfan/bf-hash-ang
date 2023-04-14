@@ -5,14 +5,12 @@
   width: 15em;
 }
 
-input.text {
+input.bftext {
   display: block;
-  width: 100%;
-  padding: .5rem;
   margin: 1rem 0;
   box-sizing: border-box;
+  line-height: 24px;
 }
-
 
 button.bf-start-button {
  padding: 1px 10px 3px 10px;
@@ -34,4 +32,23 @@ button.cancel-button {
 button.cancel-button:hover {
   background-color: #525252;
   color: white;
+}
+
+textarea {
+  resize: none;
+}
+
+.title_box {
+  border: black 1px solid;
+  padding: 5px;
+}
+
+.title_box #title {
+  position: relative;
+  top: -1em;
+  margin-left: 1em;
+  display: inline;
+  background-color: white;
+  padding: 5px;
+  font-size: large;
 }
