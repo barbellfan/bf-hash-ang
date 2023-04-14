@@ -15,29 +15,29 @@
   <div>
     <span>Include these characters in search (pick at least one):</span>
     <div>
-      <input type="checkbox" id="chkDigits" form="frmBf" />
+      <input type="checkbox" id="chkDigits" form="frmBf" name="nmChkDigits" [(ngModel)]="bfRequest.includeDigits"/>
       <label for="chkDigits">Digits: <code>0123456789</code></label>
     </div>
     <div>
-      <input type="checkbox" id="chkLower" form="frmBf" />
+      <input type="checkbox" id="chkLower" form="frmBf" name="nmChkLower" [(ngModel)]="bfRequest.includeLowerCase"/>
       <label for="chkLower">Lower case: <code>abcdefghijklmnopqrstuvwxyz</code></label>
     </div>
     <div>
-      <input type="checkbox" id="chkUpper" form="frmBf" />
+      <input type="checkbox" id="chkUpper" form="frmBf" name="nmChkUpper" [(ngModel)]="bfRequest.includeUpperCase"/>
       <label for="chkUpper">Upper case: <code>ABCDEFGHIJKLMNOPQRSTUVWXYZ</code></label>
     </div>
     <div>
-      <input type="checkbox" id="chkPunc" form="frmBf" />
+      <input type="checkbox" id="chkPunc" form="frmBf" name="nmChkPunc" [(ngModel)]="bfRequest.includePunctuation"/>
       <label for="chkPunc">Punctuation: <code>!"#$%&'()*+,-./:;&lt;=>?@[\]^_`|~{{'{}'}}</code></label>
     </div>
     <div>
-      <input type="checkbox" id="chkWhtSpc" form="frmBf" />
+      <input type="checkbox" id="chkWhtSpc" form="frmBf" name="nmChkWhtSpc" [(ngModel)]="bfRequest.includeWhiteSpace"/>
       <label for="chkWhtSpc">White space: space, tab, linefeed, return, formfeed, and vertical tab</label>
     </div>
   </div>
   </form>
   <div>
-    <button type="button" class="bf-start-button" (click)="bfStart(bfRequest.hashcode, bfRequest.maxLen)">Brute Force</button>
+    <button type="button" class="bf-start-button" (click)="bfStart()">Brute Force</button>
     <button type="button" class="cancel-button">Cancel</button>
   </div>
 

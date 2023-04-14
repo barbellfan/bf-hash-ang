@@ -19,10 +19,13 @@ export class BfhashComponent {
     includeWhiteSpace: false
   }
 
-  bfStart(hashcode: string, maxlen: number) {
-    this.bfRequest.hashcode = hashcode;
-    this.bfRequest.maxLen = maxlen;
+  bfStart() {
     console.log("hashcode: " + this.bfRequest.hashcode);
     console.log("maxLen: " + this.bfRequest.maxLen);
+    console.log("includeDigits: " + this.bfRequest.includeDigits);
+    console.log("includeLowerCase: " + this.bfRequest.includeLowerCase);
+    console.log("includeUpperCase: " + this.bfRequest.includeUpperCase);
+    console.log("includePunctuation: " + this.bfRequest.includePunctuation);
+    console.log("includeWhiteSpace: " + this.bfRequest.includeWhiteSpace);
   }
 }
