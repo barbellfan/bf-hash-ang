@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+import { BfhashWsHandlerService } from '../bfhash-ws-handler.service';
 import { BFRequest } from './bfrequest'
 import { BFResponse } from './bfresponse';
 
@@ -19,13 +20,15 @@ export class BfhashComponent {
     includeWhiteSpace: false
   }
 
+  bfResponse: BFResponse = {
+    resultFound: undefined,
+    error: undefined
+  }
+
+  constructor(private bfhashWsHandlerService: BfhashWsHandlerService) {}
+
   bfStart() {
-    console.log("hashcode: " + this.bfRequest.hashcode);
-    console.log("maxLen: " + this.bfRequest.maxLen);
-    console.log("includeDigits: " + this.bfRequest.includeDigits);
-    console.log("includeLowerCase: " + this.bfRequest.includeLowerCase);
-    console.log("includeUpperCase: " + this.bfRequest.includeUpperCase);
-    console.log("includePunctuation: " + this.bfRequest.includePunctuation);
-    console.log("includeWhiteSpace: " + this.bfRequest.includeWhiteSpace);
+    this.bfResponse = this.bfhashWsHandlerService.BfHashRequest(this.bfRequest);
+    console.log("From bfStart(): response result found = " + this.bfResponse.resultFound);
   }
 }
