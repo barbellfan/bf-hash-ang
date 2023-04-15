@@ -1,9 +1,3 @@
-.bfhash {
-  margin: 0 0 2em 0;
-  list-style-type: none;
-  padding: 0;
-  width: 15em;
-}
 
 input.bftext {
   display: block;
@@ -12,25 +6,14 @@ input.bftext {
   line-height: 24px;
 }
 
-button.bf-start-button {
- padding: 1px 10px 3px 10px;
+button {
+ padding: 5px 5px;
+ margin: 5px 5px;
  font-size: 1rem;
- margin-bottom: 5px;
 }
 
-.bf-start-button:hover {
-  color: white;
+button:hover {
   background-color: #42545C;
-}
-
-button.cancel-button {
-  font-size: 1rem;
-  margin: 5px;
-  padding: 1px 10px 3px 10px;
-}
-
-button.cancel-button:hover {
-  background-color: #525252;
   color: white;
 }
 
