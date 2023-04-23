@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable,throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 
 import { BFRequest } from './bfhash/bfrequest'
 import { BFResponse } from './bfhash/bfresponse';
@@ -8,24 +11,29 @@ import { BFResponse } from './bfhash/bfresponse';
 })
 export class BfhashWsHandlerService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  BfHashRequest(request: BFRequest): BFResponse {
+  BfHashRequest(request: BFRequest) {
 
-    console.log("From BfHashRequest()");
-    console.log("hashcode: " + request.hashcode);
-    console.log("maxLen: " + request.maxLen);
-    console.log("includeDigits: " + request.includeDigits);
-    console.log("includeLowerCase: " + request.includeLowerCase);
-    console.log("includeUpperCase: " + request.includeUpperCase);
-    console.log("includePunctuation: " + request.includePunctuation);
-    console.log("includeWhiteSpace: " + request.includeWhiteSpace);
+    const req = this.http.get("http://127.0.0.1:8000/BruteForceHashcode",
+      {
+        responseType: "text"
+      });
+    req.subscribe(
+      (response) => {
+        console.log("Response from web service: " + response);
+    },
+    (error) => {
+      console.log("Response failed with error: ");
+      console.log(error.status);
+      console.log(error.statusText);
+      console.log(error.url);
+      console.log(error.name);
+      console.log(error.message);
+    },
+    () => {
+      console.log("Response did something");
+    });
 
-    let response: BFResponse = {
-      resultFound: "nothing yet",
-      error: ""
-    }
-
-    return response;
   }
 }

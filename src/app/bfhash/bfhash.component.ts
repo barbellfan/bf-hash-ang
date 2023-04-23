@@ -28,7 +28,7 @@ export class BfhashComponent {
   constructor(private bfhashWsHandlerService: BfhashWsHandlerService) {}
 
   bfStart() {
-    this.bfResponse = this.bfhashWsHandlerService.BfHashRequest(this.bfRequest);
+    this.bfhashWsHandlerService.BfHashRequest(this.bfRequest);
     console.log("From bfStart(): response result found = " + this.bfResponse.resultFound);
   }
 }
