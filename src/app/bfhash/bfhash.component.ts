@@ -21,8 +21,7 @@ export class BfhashComponent {
   }
 
   bfResponse: BFResponse = {
-    resultFound: undefined,
-    error: undefined
+    resultFound: undefined
   }
 
   constructor(private bfhashWsHandlerService: BfhashWsHandlerService) {}
