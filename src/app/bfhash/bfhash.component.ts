@@ -28,6 +28,6 @@ export class BfhashComponent {
 
   bfStart() {
     this.bfhashWsHandlerService.BfHashRequest(this.bfRequest);
-    console.log("From bfStart(): response result found = " + this.bfResponse.resultFound);
+    console.log("From bfStart(): done");
   }
 }

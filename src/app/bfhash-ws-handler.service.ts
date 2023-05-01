@@ -15,25 +15,28 @@ export class BfhashWsHandlerService {
 
   BfHashRequest(request: BFRequest) {
 
-    const req = this.http.get("http://127.0.0.1:8000/BruteForceHashcode",
-      {
-        responseType: "text"
-      });
-    req.subscribe(
-      (response) => {
-        console.log("Response from web service: " + response);
-    },
-    (error) => {
-      console.log("Response failed with error: ");
-      console.log(error.status);
-      console.log(error.statusText);
-      console.log(error.url);
-      console.log(error.name);
-      console.log(error.message);
-    },
-    () => {
-      console.log("Response did something");
-    });
+    const myObserver = {
+      next: (response: String) => console.log("Response from web service: " + response),
+      error: (error: Error) => console.log("Response failed with error: " + error.name + ": " + error.message),
+      complete: () => console.log("Response complete")
+    };
 
+    const req = this.http.get("http://127.0.0.1:8000/BruteForceHashcode", { responseType: "text" });
+
+    req.subscribe(myObserver);
+  }
+
+  nextHandler(response: String) {
+    console.log("Response from web service: " + response);
+  }
+
+  responseHandler(error: Error) {
+    console.log("Response failed with error: ");
+    console.log(error.name);
+    console.log(error.message);
+  }
+
+  completeHandler() {
+    console.log("Response complete");
   }
 }
